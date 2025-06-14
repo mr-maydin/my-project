@@ -25,20 +25,35 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        placeholder="Kullanıcı Adı"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Şifre"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Giriş Yap</button>
-      {error && <div style={{ color: "red" }}>{error}</div>}
-    </form>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-2">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-sm bg-white rounded-xl shadow-md p-8 flex flex-col gap-6"
+      >
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
+          Giriş Yap
+        </h2>
+        <input
+          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          placeholder="Kullanıcı Adı"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          type="password"
+          placeholder="Şifre"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-semibold shadow transition"
+        >
+          Giriş Yap
+        </button>
+        {error && <div className="text-center text-red-500">{error}</div>}
+      </form>
+    </div>
   );
 }
