@@ -3,11 +3,20 @@ export async function getBlogs() {
   return res.json();
 }
 
+export async function addBlog(title, content) {
+  const res = await fetch("/api/blogs", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title, content }),
+  });
+  return res.json();
+}
+
 export async function updateBlog(id, title, content) {
   const res = await fetch("/api/blogs", {
     method: "PUT",
-    body: JSON.stringify({ id, title, content }),
     headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id, title, content }),
   });
   return res.json();
 }
