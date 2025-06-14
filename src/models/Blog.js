@@ -6,3 +6,11 @@ const BlogSchema = new mongoose.Schema({
 });
 
 export default mongoose.models.Blog || mongoose.model("Blog", BlogSchema);
+
+[
+  {
+    "_id": "665e1b...",
+    "title": "Başlık",
+    "content": "İçerik"
+  }
+]

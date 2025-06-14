@@ -20,3 +20,10 @@ export async function PUT(req) {
   const blog = await Blog.findByIdAndUpdate(id, { title, content }, { new: true });
   return Response.json(blog);
 }
+
+export async function DELETE(req) {
+  await dbConnect();
+  const { id } = await req.json();
+  await Blog.findByIdAndDelete(id);
+  return Response.json({ success: true });
+}
