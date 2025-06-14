@@ -15,9 +15,9 @@ export default function LoginPage() {
     const res = await signIn("credentials", {
       username,
       password,
-      redirect: false,
+      redirect: false, // Bu önemli!
     });
-    if (res.ok) {
+    if (res?.ok) {
       router.push("/");
     } else {
       setError("Kullanıcı adı veya şifre hatalı!");

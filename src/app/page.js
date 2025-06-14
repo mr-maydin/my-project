@@ -28,6 +28,10 @@ export default function Home() {
 	}, [status, router]);
 
 	if (status === "loading") return <div>Yükleniyor...</div>;
+	if (status === "unauthenticated") {
+		router.push("/login");
+		return null;
+	}
 
 	return (
 		<div>

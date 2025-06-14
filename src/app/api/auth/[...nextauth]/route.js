@@ -25,7 +25,7 @@ const handler = NextAuth({
   },
   pages: {
     signIn: "/login",
-    error: "/login", // Hatalı girişte tekrar login sayfasına yönlendir
+    error: "/login",
   },
   secret: process.env.NEXTAUTH_SECRET,
 });
