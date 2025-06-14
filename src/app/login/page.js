@@ -27,16 +27,18 @@ export default function LoginPage() {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        placeholder="Kullanıcı Adı"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
+        placeholder="Şifre"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <button type="submit">Giriş Yap</button>
-      {error && <div>{error}</div>}
+      {error && <div style={{ color: "red" }}>{error}</div>}
     </form>
   );
 }
